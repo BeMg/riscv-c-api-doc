@@ -203,6 +203,17 @@ function declares more than one mode or an undefined mode.
 
 This attribute is incompatible with the `naked` attribute.
 
+### `__attribute__((target_clones("<ATTR-STRING>", "<ATTR-STRING>", ...)))
+
+`target_clones` attribute used for compiling a function into multi-versioning by different set of features or extensions.
+
+Each `ATTR-STRING` defines the distinguished target options for the current function. Notably, the ATTR-STRING list must include default, implying the file scope build attributes.
+
+The usage and constraints of `ATTR-STRING` are identical to that of the target attribute.
+
+The compiler may emit mapping symbol at the beginning of the function with
+target attribute if the function use different set of ISA extension.
+
 ## Intrinsic Functions
 
 Intrinsic functions (or intrinsics or built-ins) are expanded into instruction sequences by compilers.
